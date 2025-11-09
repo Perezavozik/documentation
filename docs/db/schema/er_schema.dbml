@@ -1,0 +1,142 @@
+Table About {
+  id integer [primary key]
+  menu_title varchar
+  title varchar
+  body text
+  order smallint
+}
+
+Table SiteContacts {
+  id integer [primary key]
+  email varchar
+  address varchar
+  working_time text
+}
+
+Table PhonesContacts {
+  id integer [primary key]
+  site_id integer [ref: > SiteContacts.id]
+  phone varchar
+}
+
+Table Congresses {
+  id integer [primary key]
+  menu_title varchar
+  title varchar
+  body text
+  order smallint
+}
+
+Table Partners {
+  id integer [primary key]
+  name varchar
+  image varchar
+  order integer
+}
+
+Table Award {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table CandidateAwards {
+  id integer [primary key]
+  name varchar
+  description text
+  slug varchar [unique]
+  image varchar
+}
+
+Table Candidate {
+  id integer [primary key]
+  name varchar
+  description text
+  photo varchar
+  number_of_votes integer
+  awards_id integer [ref: > CandidateAwards.id]
+}
+
+Table Culture {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table Event {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  date date
+  place varchar
+  order integer
+  created_at timestamp
+}
+
+Table History {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table Language {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table NewsOnMain {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table OurProject {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
+
+Table Society {
+  id integer [primary key]
+  name varchar
+  announcement text
+  description text
+  slug varchar [unique]
+  image varchar
+  order integer
+  created_at timestamp
+}
